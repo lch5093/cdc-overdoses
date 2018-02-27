@@ -1,14 +1,14 @@
-Plotly.d3.csv("https://raw.githubusercontent.com/lch5093/cdc-overdoses/master/DRUG_DEATHS_1999-2016.CSV", function(err, rows){
+Plotly.d3.csv("https://raw.githubusercontent.com/lch5093/cdc-overdoses/master/DRUG_DEATHS_1999-2016_full.CSV", function(err, rows){
 
   function unpack(rows, key) {
   return rows.map(function(row) { return row[key]; })
   }
 
   var frames = []
-  var z = unpack(rows, 'RATE')
-  var locations = unpack(rows, 'STATE')
+  var z = unpack(rows, 'Crude.Rate')
+  var locations = unpack(rows, 'region')
 
-  var n = 5;
+  var n = 17;
   var j = 50;
   var k = 0;
   var num = 1999
@@ -64,7 +64,7 @@ var layout = {
             duration: 200,
           },
           frame: {
-            duration: 500,
+            duration: 300,
             redraw: false
           }
         }],
@@ -99,9 +99,127 @@ var layout = {
           }
         ]
       },{
+        label: "2000",
+        method: "animate",
+        args: [["2000"], {
+            mode: "immediate",
+            transition: {duration: 300},
+            frame: {duration: 300, "redraw": false}
+          }
+        ]
+      }, {
+        label: "2001",
+        method: "animate",
+        args: [["2001"], {
+            mode: "immediate",
+            transition: {duration: 300},
+            frame: {duration: 300, "redraw": false}
+          }
+        ]
+      }, {
+        label: "2002",
+        method: "animate",
+        args: [["2002"], {
+            mode: "immediate",
+            transition: {duration: 300},
+            frame: {duration: 300, "redraw": false}
+          }
+        ]
+      }, {
+        label: "2003",
+        method: "animate",
+        args: [["2003"], {
+            mode: "immediate",
+            transition: {duration: 300},
+            frame: {duration: 300, "redraw": false}
+          }
+               ]
+      }, {
+        label: "2004",
+        method: "animate",
+        args: [["2004"], {
+            mode: "immediate",
+            transition: {duration: 300},
+            frame: {duration: 300, "redraw": false}
+          }
+        ]
+      }, {
         label: "2005",
         method: "animate",
         args: [["2005"], {
+            mode: "immediate",
+            transition: {duration: 300},
+            frame: {duration: 300, "redraw": false}
+          }
+        ]
+           }, {
+        label: "2006",
+        method: "animate",
+        args: [["2006"], {
+            mode: "immediate",
+            transition: {duration: 300},
+            frame: {duration: 300, "redraw": false}
+          }
+        ]
+      },
+             {
+        label: "2007",
+        method: "animate",
+        args: [["2007"], {
+            mode: "immediate",
+            transition: {duration: 300},
+            frame: {duration: 300, "redraw": false}
+          }
+        ]
+      }, {
+        label: "2008",
+        method: "animate",
+        args: [["2008"], {
+            mode: "immediate",
+            transition: {duration: 300},
+            frame: {duration: 300, "redraw": false}
+          }
+        ]
+      }, {
+        label: "2009",
+        method: "animate",
+        args: [["2009"], {
+            mode: "immediate",
+            transition: {duration: 300},
+            frame: {duration: 300, "redraw": false}
+          }
+        ]
+      }, {
+        label: "2010",
+        method: "animate",
+        args: [["2010"], {
+            mode: "immediate",
+            transition: {duration: 300},
+            frame: {duration: 300, "redraw": false}
+          }
+        ]
+      }, {
+        label: "2011",
+        method: "animate",
+        args: [["2011"], {
+            mode: "immediate",
+            transition: {duration: 300},
+            frame: {duration: 300, "redraw": false}
+          }
+        ]
+      }, {
+        label: "2012",
+        method: "animate",
+        args: [["2012"], {
+            mode: "immediate",
+            transition: {duration: 300},
+            frame: {duration: 300, "redraw": false}
+          }
+        ]
+      }, {
+        label: "2013",
+        method: "animate",
+        args: [["2013"], {
             mode: "immediate",
             transition: {duration: 300},
             frame: {duration: 300, "redraw": false}
@@ -136,11 +254,11 @@ var layout = {
         ]
       }],
       x: 0.1,
-      len: 0.9,
+      len: 0.7,
       xanchor: "left",
       y: 0,
       yanchor: "top",
-      pad: {t: 50, b: 10},
+      pad: {t: 10, b: 10},
       currentvalue: {
         visible: true,
         prefix: "Year:",
